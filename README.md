@@ -1,3 +1,22 @@
+# esbuild for IBMi
+
+This repo contain some changes to build esbuild for IBMi. 
+
+to compile it after cloning this repo : 
+
+    cd esbuild_ibmi
+    make platform-aix-ppc64
+    cd npm/@esbuild/aix-ppc64
+    npm i 
+    cd ../esbuild
+    npm -i -g 
+
+and if all is correct : 
+
+    esbuild --version
+    shows 0.24.0
+
+
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="./images/wordmark-dark.svg">
