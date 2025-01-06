@@ -8,7 +8,9 @@ to compile it after cloning this repo :
     make platform-aix-ppc64
     cd npm/@esbuild/aix-ppc64
     npm i 
+		npm i -g
     cd ../../esbuild
+		cp -r ../@esbuild/aix-ppc64/bin .
     npm i -g
 
 and if all is correct : 
