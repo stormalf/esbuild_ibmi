@@ -1610,6 +1610,7 @@ var knownWindowsPackages = {
   "win32 x64 LE": "@esbuild/win32-x64"
 };
 var knownUnixlikePackages = {
+  "os400 ppc64 BE": "@esbuild/os400-ppc64",
   "aix ppc64 BE": "@esbuild/aix-ppc64",
   "android arm64 LE": "@esbuild/android-arm64",
   "darwin arm64 LE": "@esbuild/darwin-arm64",

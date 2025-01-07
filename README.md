@@ -5,7 +5,8 @@ This repo contain some changes to build esbuild for IBMi.
 to compile it after cloning this repo :
 
     cd esbuild_ibmi
-    make platform-aix-ppc64
+    make platform-aix-ppc64  (or make platform-os400-ppc64)
+    make validate-builds
     cd npm/@esbuild/aix-ppc64
     npm i 
     npm i -g

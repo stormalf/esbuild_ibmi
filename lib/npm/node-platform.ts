@@ -26,7 +26,7 @@ export const knownWindowsPackages: Record<string, string> = {
 }
 
 export const knownUnixlikePackages: Record<string, string> = {
-  'os400 ppc64 BE': '@esbuild/aix-ppc64',
+  'os400 ppc64 BE': '@esbuild/os400-ppc64',
   'aix ppc64 BE': '@esbuild/aix-ppc64',
   'android arm64 LE': '@esbuild/android-arm64',
   'darwin arm64 LE': '@esbuild/darwin-arm64',
