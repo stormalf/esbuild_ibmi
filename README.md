@@ -1,22 +1,30 @@
 # esbuild for IBMi
 
-This repo contain some changes to build esbuild for IBMi. 
+This repo contain some changes to build esbuild for IBMi.
 
-to compile it after cloning this repo : 
+to compile it after cloning this repo :
 
     cd esbuild_ibmi
     make platform-aix-ppc64
     cd npm/@esbuild/aix-ppc64
     npm i 
-		npm i -g
+    npm i -g
+    cd ../os400-ppc64
+    npm i
+    npm i -g
     cd ../../esbuild
-		cp -r ../@esbuild/aix-ppc64/bin .
+    cp -r ../@esbuild/aix-ppc64/bin .
     npm i -g
 
-and if all is correct : 
+and if all is correct :
 
     esbuild --version
     shows 0.24.0
+
+## current status
+
+Issue with package installed on IBMi that shows relative path to bin folder when executing npm list -g.
+Current issue with yarn doesn't manage well the @esbuild/aix-ppc64 package. It tries to reinstall from npm registry that of course fails.
 
 
 <p align="center">

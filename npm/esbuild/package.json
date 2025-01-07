@@ -18,7 +18,8 @@
     "esbuild": "bin/esbuild"
   },
   "optionalDependencies": {
-    "@esbuild/aix-ppc64": "file:../@esbuild/aix-ppc64",
+    "@esbuild/os400-ppc64": "0.24.0",
+    "@esbuild/aix-ppc64": "0.24.0",
     "@esbuild/android-arm": "0.24.0",
     "@esbuild/android-arm64": "0.24.0",
     "@esbuild/android-x64": "0.24.0",
