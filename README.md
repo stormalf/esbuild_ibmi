@@ -24,7 +24,7 @@ and if all is correct :
 ## current status
 
 Issue with package installed on IBMi that shows relative path to bin folder when executing npm list -g.
-Current issue with yarn doesn't manage well the @esbuild/aix-ppc64 package. It tries to reinstall from npm registry that of course fails. Perhaps I'll try with verdeccio private npm package.
+Current issue with yarn doesn't manage well the @esbuild/aix-ppc64 package. It tries to reinstall from npm registry that of course fails. Perhaps I'll try with verdaccio private npm package.
 
 
 <p align="center">
