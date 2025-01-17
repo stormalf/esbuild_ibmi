@@ -5,15 +5,12 @@ This repo contain some changes to build esbuild for IBMi.
 to compile it after cloning this repo :
 
     cd esbuild_ibmi
-    make platform-aix-ppc64  (or make platform-os400-ppc64)
-    cd npm/@esbuild/aix-ppc64
-    npm i 
-    npm i -g
-    cd ../os400-ppc64
+    make platform-os400-ppc64
+    cd npm/@esbuild/os400-ppc64
     npm i
     npm i -g
     cd ../../esbuild
-    cp -r ../@esbuild/aix-ppc64/bin .
+    cp -r ../@esbuild/os400-ppc64/bin .
     npm i -g
 
 and if all is correct :
@@ -21,10 +18,26 @@ and if all is correct :
     esbuild --version
     shows 0.24.0
 
-## current status
+## current status concerning grafana on IBMi (grafana frontend)
 
 Issue with package installed on IBMi that shows relative path to bin folder when executing npm list -g.
-Current issue with yarn doesn't manage well the @esbuild/aix-ppc64 package. It tries to reinstall from npm registry that of course fails. Perhaps I'll try with verdaccio private npm package.
+I tried verdaccio private npm package. 
+A trick with verdaccio is to change the config.yaml to comment #proxy: npmjs and put proxy: false. After that yarn publish --registry http://localhost:4873 works. After revert config.yaml and set proxy:npmjs.
+Now yarn install continues to fail with exit 1 and showing postinstall in comment (not sure why). As a workaround, go to grafana/node_modules/esbuild and npm i works fine.
+Other issue is with esbuild-loader/node_modules/esbuild. The workaround is to copy the ./node_modules/esbuild folder to replace the esbuild-loader/node_modules/esbuild.
+Changed the package.json from grafana to set 0.24.0 and not 0.21.5 for esbuild and qualifying esbuild with absolute path on IBMi.
+For Grafana on IBMi, I will create a new github repo when Grafana frontend is ready to work.
+
+Last issue :
+yarn run build failed at 92% when processing SourceMapDevToolPlugin with javascript heap out of memory.
+
+In resume : 
+yarn install => continues to fail
+yarn run themes-generate => works fine
+yarn run build => 92% failed with javascript heap out of memory
+
+
+
 
 
 <p align="center">
