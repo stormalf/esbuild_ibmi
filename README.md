@@ -30,11 +30,15 @@ For Grafana on IBMi, I will create a new github repo when Grafana frontend is re
 
 Last issue :
 yarn run build failed at 92% when processing SourceMapDevToolPlugin with javascript heap out of memory.
+Solved by :
+
+export NODE_OPTIONS="--max-old-space-size=8192" make build-js
+
 
 In resume : 
 yarn install => continues to fail
 yarn run themes-generate => works fine
-yarn run build => 92% failed with javascript heap out of memory
+yarn run build => works fine
 
 
 
